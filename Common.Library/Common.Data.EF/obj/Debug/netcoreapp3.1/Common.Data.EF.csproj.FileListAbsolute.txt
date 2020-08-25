@@ -1,0 +1,12 @@
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\bin\Debug\netcoreapp3.1\Common.Data.EF.deps.json
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\bin\Debug\netcoreapp3.1\Common.Data.EF.dll
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\bin\Debug\netcoreapp3.1\Common.Data.EF.pdb
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.AssemblyInfoInputs.cache
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.AssemblyInfo.cs
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.dll
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.pdb
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.csprojAssemblyReference.cache
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\bin\Debug\netcoreapp3.1\Common.Data.EF.runtimeconfig.json
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\bin\Debug\netcoreapp3.1\Common.Data.EF.runtimeconfig.dev.json
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.genruntimeconfig.cache
+F:\GIT\CzechCurrency\Common.Library\Common.Data.EF\obj\Debug\netcoreapp3.1\Common.Data.EF.csproj.CoreCompileInputs.cache

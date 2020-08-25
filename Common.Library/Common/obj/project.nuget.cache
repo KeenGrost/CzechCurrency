@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3zLzZGZ4Git+PTA14lKJC2btWsvvKrQIJo9lS3hAViiTQDJhBQ6Csj4304sVpV4vuzlShmnrG10OFFRLxQsWSQ==",
+  "success": true,
+  "projectFilePath": "F:\\GIT\\CzechCurrency\\Common.Library\\Common\\Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GROST\\.nuget\\packages\\jetbrains.annotations\\2020.1.0\\jetbrains.annotations.2020.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

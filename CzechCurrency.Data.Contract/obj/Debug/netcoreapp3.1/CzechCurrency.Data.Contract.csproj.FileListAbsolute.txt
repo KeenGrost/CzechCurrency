@@ -1,0 +1,14 @@
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.deps.json
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.dll
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.pdb
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.csprojAssemblyReference.cache
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.AssemblyInfoInputs.cache
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.AssemblyInfo.cs
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.csproj.CoreCompileInputs.cache
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.dll
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.pdb
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\Common.dll
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\CzechCurrency.Entities.dll
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\Common.pdb
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\bin\Debug\netcoreapp3.1\CzechCurrency.Entities.pdb
+F:\GIT\CzechCurrency\CzechCurrency.Data.Contract\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Contract.csproj.CopyComplete

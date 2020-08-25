@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Library\Common.Data.EF\Common.Data.EF.csproj" />
+    <ProjectReference Include="..\Common.Library\Common\Common.csproj" />
+    <ProjectReference Include="..\CzechCurrency.Data.Contract\CzechCurrency.Data.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
