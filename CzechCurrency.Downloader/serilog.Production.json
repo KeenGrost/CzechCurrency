@@ -1,0 +1,29 @@
+﻿{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console" ],
+    "MinimumLevel": "Information",
+    "WriteTo": [
+      {
+        "Name": "RollingFile",
+        "Args": {
+          "pathFormat": "/var/www/logs/czech.currency.downloader/CzechCurrency.Downloader-prod-{Date}.log",
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff z} [{Level:u3}] {IPAddress} [{RequestId}] [{IdentityName}] {SourceContext}: {Message:lj}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "RollingFile"
+            }
+          ]
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+    "Properties": {
+      "Application": "Sample"
+    }
+  }
+}
