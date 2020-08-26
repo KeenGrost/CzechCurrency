@@ -9,7 +9,8 @@ namespace CzechCurrency.Data
         {
         }
 
-
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<ExchangeRate> ExchangeRates { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
