@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Downloader", "CzechCurrency.Downloader\CzechCurrency.Downloader.csproj", "{F3DF562A-B627-4E71-B7C3-265379F8251A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Downloader", "CzechCurrency.Downloader\CzechCurrency.Downloader.csproj", "{F3DF562A-B627-4E71-B7C3-265379F8251A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.API", "CzechCurrency.API\CzechCurrency.API.csproj", "{7B96C893-C888-44FF-B773-089C885CFC68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.API", "CzechCurrency.API\CzechCurrency.API.csproj", "{7B96C893-C888-44FF-B773-089C885CFC68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Site", "CzechCurrency.Site\CzechCurrency.Site.csproj", "{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Site", "CzechCurrency.Site\CzechCurrency.Site.csproj", "{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Entities", "CzechCurrency.Entities\CzechCurrency.Entities.csproj", "{AC4400C0-392D-4D42-926C-8649C3494933}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Entities", "CzechCurrency.Entities\CzechCurrency.Entities.csproj", "{AC4400C0-392D-4D42-926C-8649C3494933}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{95EB28A0-0569-430D-9F98-C586D52B7B83}"
 EndProject
@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{9E6F97DB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BF7DB8F5-CEE1-474A-93E9-F13DFAD1E029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Data", "CzechCurrency.Data\CzechCurrency.Data.csproj", "{2FE937F8-70C3-4FC6-8688-E2425297BC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Data", "CzechCurrency.Data\CzechCurrency.Data.csproj", "{2FE937F8-70C3-4FC6-8688-E2425297BC8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Data.Contract", "CzechCurrency.Data.Contract\CzechCurrency.Data.Contract.csproj", "{9CDFFA28-4514-42E5-A68F-74D22EF719BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Data.Contract", "CzechCurrency.Data.Contract\CzechCurrency.Data.Contract.csproj", "{9CDFFA28-4514-42E5-A68F-74D22EF719BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Data.Migrations", "CzechCurrency.Data.Migrations\CzechCurrency.Data.Migrations.csproj", "{6F521C86-DC40-46CC-8480-BCA39C9C2CB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Data.Migrations", "CzechCurrency.Data.Migrations\CzechCurrency.Data.Migrations.csproj", "{6F521C86-DC40-46CC-8480-BCA39C9C2CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{201976CA-4682-4D68-A4A1-202B6D79904A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration", "Configuration\Configuration.csproj", "{201976CA-4682-4D68-A4A1-202B6D79904A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{79902491-D762-4348-A36C-FBDE9670F587}"
 EndProject
@@ -34,6 +34,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Data.EF", "Common.Library\Common.Data.EF\Common.Data.EF.csproj", "{579808E2-B87E-49E8-B03C-2FC105B95B8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Service", "Common.Library\Common.Service\Common.Service.csproj", "{044012A3-D0CD-4123-93F0-C2C35D146FFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sevices", "Sevices", "{9E0A5E63-67B7-4404-8178-F130A8ABB4F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Services", "CzechCurrency.Services\CzechCurrency.Services.csproj", "{811586B4-F44D-4558-B02F-523E8862AD3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Services.Contract", "CzechCurrency.Services.Contract\CzechCurrency.Services.Contract.csproj", "{2659B3E0-4663-46C4-940C-99B38BDBBE53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +91,14 @@ Global
 		{044012A3-D0CD-4123-93F0-C2C35D146FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044012A3-D0CD-4123-93F0-C2C35D146FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{044012A3-D0CD-4123-93F0-C2C35D146FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811586B4-F44D-4558-B02F-523E8862AD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811586B4-F44D-4558-B02F-523E8862AD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811586B4-F44D-4558-B02F-523E8862AD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811586B4-F44D-4558-B02F-523E8862AD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2659B3E0-4663-46C4-940C-99B38BDBBE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2659B3E0-4663-46C4-940C-99B38BDBBE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2659B3E0-4663-46C4-940C-99B38BDBBE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2659B3E0-4663-46C4-940C-99B38BDBBE53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +115,8 @@ Global
 		{8BAF977C-4B41-4E72-A2A3-332DED282BDB} = {79902491-D762-4348-A36C-FBDE9670F587}
 		{579808E2-B87E-49E8-B03C-2FC105B95B8A} = {79902491-D762-4348-A36C-FBDE9670F587}
 		{044012A3-D0CD-4123-93F0-C2C35D146FFA} = {79902491-D762-4348-A36C-FBDE9670F587}
+		{811586B4-F44D-4558-B02F-523E8862AD3C} = {9E0A5E63-67B7-4404-8178-F130A8ABB4F0}
+		{2659B3E0-4663-46C4-940C-99B38BDBBE53} = {9E0A5E63-67B7-4404-8178-F130A8ABB4F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EDDC187D-D2DB-42EB-8767-3010362359FF}

@@ -14,5 +14,12 @@
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Library\Common\Common.csproj" />
+    <ProjectReference Include="..\Configuration\Configuration.csproj" />
+    <ProjectReference Include="..\CzechCurrency.Data\CzechCurrency.Data.csproj" />
+    <ProjectReference Include="..\CzechCurrency.Services\CzechCurrency.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>
