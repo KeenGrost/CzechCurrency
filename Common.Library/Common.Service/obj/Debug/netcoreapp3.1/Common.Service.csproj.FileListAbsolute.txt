@@ -1,9 +1,0 @@
-F:\GIT\CzechCurrency\Common.Library\Common.Service\bin\Debug\netcoreapp3.1\Common.Service.deps.json
-F:\GIT\CzechCurrency\Common.Library\Common.Service\bin\Debug\netcoreapp3.1\Common.Service.dll
-F:\GIT\CzechCurrency\Common.Library\Common.Service\bin\Debug\netcoreapp3.1\Common.Service.pdb
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.csprojAssemblyReference.cache
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.AssemblyInfoInputs.cache
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.AssemblyInfo.cs
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.csproj.CoreCompileInputs.cache
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.dll
-F:\GIT\CzechCurrency\Common.Library\Common.Service\obj\Debug\netcoreapp3.1\Common.Service.pdb

@@ -1,8 +1,0 @@
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.deps.json
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.dll
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\bin\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.pdb
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.AssemblyInfoInputs.cache
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.AssemblyInfo.cs
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.csproj.CoreCompileInputs.cache
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.dll
-F:\GIT\CzechCurrency\CzechCurrency.Data.Migrations\obj\Debug\netcoreapp3.1\CzechCurrency.Data.Migrations.pdb
