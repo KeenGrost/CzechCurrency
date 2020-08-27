@@ -1,22 +1,21 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
-using Common.Service;
+using Common.Data.EF;
 using CzechCurrency.Data.Contract;
 using CzechCurrency.Entities;
-using CzechCurrency.Services.Contract;
+using Microsoft.EntityFrameworkCore;
 
-namespace CzechCurrency.Services
-{
+namespace CzechCurrency.Data.Repositories
+{ 
+
     /// <summary>
-    /// Сервис работы со справочником валют
+    /// Репозиторий логов активированных пакетов
     /// </summary>
-    public class CurrencyService : BaseService<Currency>, ICurrencyService
+    public class CurrencyRepository : BaseRepository<Currency>, ICurrencyRepository
     {
-        private readonly ICurrencyRepository _repository;
-
-        public CurrencyService(ICurrencyRepository repository) : base(repository)
+        public CurrencyRepository(CzechCurrencyDbContext context) : base(context)
         {
-            _repository = repository;
         }
 
         public Task<Currency> GetByCode(string code)
@@ -30,3 +29,4 @@ namespace CzechCurrency.Services
         }
     }
 }
+

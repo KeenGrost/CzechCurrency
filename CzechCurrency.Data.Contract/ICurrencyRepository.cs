@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Common.Service;
+using Common.Data.Repository;
 using CzechCurrency.Entities;
 using JetBrains.Annotations;
 
-namespace CzechCurrency.Services.Contract
+namespace CzechCurrency.Data.Contract
 {
-
     /// <summary>
-    /// Интерфейс сервиса справочника валют
+    /// Интерфейс репозитория справочника валют
     /// </summary>
-    public interface ICurrencyService : IBaseService<Currency>
+    public interface ICurrencyRepository : IBaseRepository<Currency>
     {
+
         /// <summary>
         /// Получить валюту по коду
         /// </summary>
         /// <param name="code">Код</param>
-        /// <returns></returns>
+        /// <returns>История активаций пакетов</returns>
         [ItemNotNull]
-        Task<Currency> GetByCode([NotNull] string code);
+        Task<Currency> GetByCode([NotNull]string code);
 
         /// <summary>
         /// Получить валюту по номеру
         /// </summary>
         /// <param name="number">Номер</param>
-        /// <returns></returns>
+        /// <returns>История активаций пакетов</returns>
         [ItemNotNull]
         Task<Currency> GetByNumber([NotNull] string number);
-        
+
     }
 }

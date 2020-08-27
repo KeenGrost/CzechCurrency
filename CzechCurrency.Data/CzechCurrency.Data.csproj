@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Common.Library\Common.Data.EF\Common.Data.EF.csproj" />
     <ProjectReference Include="..\Common.Library\Common\Common.csproj" />
     <ProjectReference Include="..\CzechCurrency.Data.Contract\CzechCurrency.Data.Contract.csproj" />
