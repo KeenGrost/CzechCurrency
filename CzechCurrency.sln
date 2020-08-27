@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Downloader", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.API", "CzechCurrency.API\CzechCurrency.API.csproj", "{7B96C893-C888-44FF-B773-089C885CFC68}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Site", "CzechCurrency.Site\CzechCurrency.Site.csproj", "{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Entities", "CzechCurrency.Entities\CzechCurrency.Entities.csproj", "{AC4400C0-392D-4D42-926C-8649C3494933}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{95EB28A0-0569-430D-9F98-C586D52B7B83}"
@@ -37,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Service", "Common.Li
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sevices", "Sevices", "{9E0A5E63-67B7-4404-8178-F130A8ABB4F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Services", "CzechCurrency.Services\CzechCurrency.Services.csproj", "{811586B4-F44D-4558-B02F-523E8862AD3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Services", "CzechCurrency.Services\CzechCurrency.Services.csproj", "{811586B4-F44D-4558-B02F-523E8862AD3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Services.Contract", "CzechCurrency.Services.Contract\CzechCurrency.Services.Contract.csproj", "{2659B3E0-4663-46C4-940C-99B38BDBBE53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Services.Contract", "CzechCurrency.Services.Contract\CzechCurrency.Services.Contract.csproj", "{2659B3E0-4663-46C4-940C-99B38BDBBE53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +53,6 @@ Global
 		{7B96C893-C888-44FF-B773-089C885CFC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B96C893-C888-44FF-B773-089C885CFC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B96C893-C888-44FF-B773-089C885CFC68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6E29D81-E54C-4AF8-9670-6CDDA69066B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC4400C0-392D-4D42-926C-8649C3494933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC4400C0-392D-4D42-926C-8649C3494933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC4400C0-392D-4D42-926C-8649C3494933}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,7 +100,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F3DF562A-B627-4E71-B7C3-265379F8251A} = {9E6F97DB-EBD9-4424-B385-75960BE954E1}
 		{7B96C893-C888-44FF-B773-089C885CFC68} = {6A3947D0-8627-4EBE-8E17-DDE98393F24F}
-		{E6E29D81-E54C-4AF8-9670-6CDDA69066B4} = {6A3947D0-8627-4EBE-8E17-DDE98393F24F}
 		{AC4400C0-392D-4D42-926C-8649C3494933} = {95EB28A0-0569-430D-9F98-C586D52B7B83}
 		{2FE937F8-70C3-4FC6-8688-E2425297BC8B} = {BF7DB8F5-CEE1-474A-93E9-F13DFAD1E029}
 		{9CDFFA28-4514-42E5-A68F-74D22EF719BF} = {BF7DB8F5-CEE1-474A-93E9-F13DFAD1E029}
