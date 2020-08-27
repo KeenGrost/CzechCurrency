@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CzechCurrency.Entities
@@ -14,6 +15,7 @@ namespace CzechCurrency.Entities
         /// <summary>
         /// Код
         /// </summary>
+        [Key]
         [Column("code")]
         public string Code { get; set; }
 

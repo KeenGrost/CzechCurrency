@@ -12,6 +12,12 @@ namespace CzechCurrency.Entities
     {
 
         /// <summary>
+        /// ID записи.
+        /// </summary>
+        [Column("id")]
+        public long Id { get; set; }
+
+        /// <summary>
         /// Код валюты
         /// </summary>
         [Column("currency_number")]

@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
-using Configuration;
+﻿using Configuration;
 using CzechCurrency.Data;
+using CzechCurrency.Data.Contract;
+using CzechCurrency.Data.Repositories;
+using CzechCurrency.Services;
+using CzechCurrency.Services.Contract;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
+using System.Globalization;
 
 namespace CzechCurrency.API
 {
@@ -40,7 +37,6 @@ namespace CzechCurrency.API
         /// <param name="env"></param>
         public Startup(IWebHostEnvironment env)
         {
-
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", false, true)
@@ -57,34 +53,44 @@ namespace CzechCurrency.API
                 .CreateLogger();
         }
 
-
-
-
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             var cultureInfo = new CultureInfo("ru-RU");
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
-
-            //services.AddSingleton(new ConfigurationManager(Configuration));
+            services.AddSingleton(new ConfigurationManager(Configuration));
 
             string conString = Configuration[ConfigurationConnectionStringCzechCurrency];
 
+            services.AddDbContext<CzechCurrencyDbContext>(options =>
+                options.UseNpgsql(conString, b =>
+                {
+                    b.MigrationsAssembly("CzechCurrency.Data.Migrations");
+                }));
+
             services.AddDbContext<CzechCurrencyDbContext>(options => options.UseNpgsql(conString));
-            
-            // RegisterOptions(services);
 
-            // RegisterRepositories(services);
+            RegisterServices(services);
 
-            // RegisterServices(services);
+            RegisterRepositories(services);
 
             // RegisterSwagger(services);
-            
+
             services.AddControllers();
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddScoped<ICurrencyService, CurrencyService>();
+            services.AddScoped<IExchangeRateService, ExchangeRateService>();
+        }
+
+        private void RegisterRepositories(IServiceCollection services)
+        {
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
