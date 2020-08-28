@@ -29,7 +29,13 @@ namespace CzechCurrency.Services.Contract
         [ItemNotNull]
         Task AddRange(IEnumerable<ExchangeRate> exchangeRates);
 
-
+        /// <summary>
+        /// Пакетное удаление курсов обмена в БД за год
+        /// </summary>
+        /// <param name="year">год</param>
+        /// <returns></returns>
+        [ItemNotNull]
+        Task DeleteByYear(int year);
 
     }
 }

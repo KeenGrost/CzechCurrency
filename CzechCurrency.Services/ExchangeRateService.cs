@@ -30,5 +30,16 @@ namespace CzechCurrency.Services
         {
             await _repository.AddRange(exchangeRates);
         }
+
+        public async Task DeleteByYear(int year)
+        {
+            ExchangeRate[] exchangeRates = await GetByYear(year);
+            await _repository.DeleteRange(exchangeRates);
+        }
+
+        public async Task<ExchangeRate[]> GetByYear(int year)
+        {
+            return await _repository.GetAll(x=>x.Date.Year == year);
+        }
     }
 }

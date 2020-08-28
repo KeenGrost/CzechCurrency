@@ -89,6 +89,8 @@ namespace CzechCurrency.Downloader.UtilityTask
                 }
             }
            
+            // Пакетно удалим текущие записи за год, чтоб не было дублирования
+            await _exchangeRateService.DeleteByYear(_czechCurrencyDownloaderOptions.Year);
 
             // Добавить в БД
             await _exchangeRateService.AddRange(exchangeRates);
