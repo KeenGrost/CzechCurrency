@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace CzechCurrency.Entities
 {
@@ -20,8 +23,8 @@ namespace CzechCurrency.Entities
         /// <summary>
         /// Код валюты
         /// </summary>
-        [Column("currency_number")]
-        public string CurrencyNumber { get; set; }
+        [Column("code")]
+        public string CurrencyCode { get; set; }
 
         public Currency Currency { get; set; }
 
@@ -36,6 +39,20 @@ namespace CzechCurrency.Entities
         /// Значение курса
         /// </summary>
         [Column("value")]
-        public string Value { get; set; }
+        public decimal Value { get; set; }
+
+        /// <summary>
+        /// Создать курс обмена из файла импорта
+        /// </summary>
+        public static ExchangeRate CreateFromImportFile([NotNull] string value, [NotNull] string currencyCode, string data)
+        {
+            return new ExchangeRate
+            {
+                Value = Decimal.Parse(value.Replace(',', '.'), NumberStyles.Float,
+                    CultureInfo.InvariantCulture),
+                CurrencyCode = currencyCode,
+                Date = DateTime.ParseExact(data, "dd.MM.yyyy", CultureInfo.InvariantCulture)
+            };
+        }
     }
 }
