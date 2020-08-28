@@ -26,6 +26,7 @@ namespace CzechCurrency.Entities
         [Column("code")]
         public string CurrencyCode { get; set; }
 
+
         public Currency Currency { get; set; }
 
         /// <summary>

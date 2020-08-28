@@ -15,11 +15,11 @@ namespace CzechCurrency.Services.Contract
         /// <summary>
         /// Получить курс обмена по дате и по коду валюты
         /// </summary>
-        /// <param name="numberCurrency">Код</param>
+        /// <param name="currencyCode">Код</param>
         /// <param name="date">Дата</param>
         /// <returns></returns>
-        [ItemNotNull]
-        Task<ExchangeRate> Get([NotNull] string numberCurrency, DateTime date);
+        [CanBeNull]
+        Task<ExchangeRate> Get([NotNull] string currencyCode, DateTime date);
 
         /// <summary>
         /// Пакетное сохранение курсов обмена в БД

@@ -21,9 +21,17 @@ namespace CzechCurrency.Services
         }
 
 
-        public Task<ExchangeRate> Get(string numberCurrency, DateTime date)
+        public async Task<ExchangeRate> Get(string currencyCode, DateTime date)
         {
-            throw new NotImplementedException();
+            ExchangeRate exchangeRate = null;
+            while (exchangeRate == null)
+            {
+                exchangeRate = await _repository.Get(currencyCode, date);
+                // смещение с учетом
+
+                date = date.AddDays(-1);
+            }
+            return exchangeRate;
         }
 
         public async Task AddRange(IEnumerable<ExchangeRate> exchangeRates)
