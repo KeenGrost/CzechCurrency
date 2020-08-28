@@ -1,9 +1,13 @@
-﻿using Common.Utility;
+﻿using System.Collections.Generic;
+using System.IO;
+using Common.Utility;
 using CzechCurrency.Downloader.Options;
 using CzechCurrency.Services.Contract;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
+using CzechCurrency.Entities;
+using CzechCurrency.Services.Contract.Api;
 
 namespace CzechCurrency.Downloader.UtilityTask
 {
@@ -12,6 +16,8 @@ namespace CzechCurrency.Downloader.UtilityTask
     /// </summary>
     public class ExchangeRatesDownloaderUtilityTask : IUtilityTask
     {
+
+        private readonly ICnbApi _cnbApi;
         private readonly IExchangeRateService _exchangeRateService;
         private readonly ILogger<CzechCurrencyDownloaderOptions> _logger;
         private readonly CzechCurrencyDownloaderOptions _czechCurrencyDownloaderOptions;
@@ -20,10 +26,12 @@ namespace CzechCurrency.Downloader.UtilityTask
         public ExchangeRatesDownloaderUtilityTask(
             IExchangeRateService exchangeRateService,
             ILogger<CzechCurrencyDownloaderOptions> logger,
-            IOptionsMonitor<CzechCurrencyDownloaderOptions> czechCurrencyDownloaderOptions)
+            IOptionsMonitor<CzechCurrencyDownloaderOptions> czechCurrencyDownloaderOptions, 
+            ICnbApi cnbApi)
         {
             _exchangeRateService = exchangeRateService;
             _logger = logger;
+            _cnbApi = cnbApi;
             _czechCurrencyDownloaderOptions = czechCurrencyDownloaderOptions.CurrentValue;
         }
 
@@ -34,13 +42,30 @@ namespace CzechCurrency.Downloader.UtilityTask
 
         private async Task DownloadExchageRates()
         {
-            //todo Скачать файл
-            _logger.LogInformation("Файл Скачан");
+            var exchangeRates = new List<ExchangeRate>();
 
-            //todo распарсить файл
-            _logger.LogInformation("Файл Распознан");
+            // Скачать файл
+            //
+            var exchangeRatesSource = await _cnbApi.ExchangeRates(_czechCurrencyDownloaderOptions.Year);
+            var contentStream = await exchangeRatesSource.ReadAsStreamAsync(); // get the actual content stream
 
-            //todo вставить в БД addRange
+            // Распарсить файл
+            //
+            using (var streamReader = new StreamReader(contentStream))
+            {
+                streamReader.ReadLine();
+                while (!streamReader.EndOfStream)
+                {
+                    var line = streamReader.ReadLine();
+                    if (line == null) continue;
+
+                    var exchangeRatesParams = line.Trim().Split("|");
+                    exchangeRates.Add(ExchangeRate.CreateFromImportFile(exchangeRatesParams));
+                }
+            }
+
+            // Добавить в БД
+            await _exchangeRateService.AddRange(exchangeRates);
             _logger.LogInformation("Файл Импортирован в БД");
         }
     }

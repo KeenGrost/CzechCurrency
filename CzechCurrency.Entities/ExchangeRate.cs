@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace CzechCurrency.Entities
 {
@@ -37,5 +39,19 @@ namespace CzechCurrency.Entities
         /// </summary>
         [Column("value")]
         public string Value { get; set; }
+
+        /// <summary>
+        /// Создать курс обмена из файла импорта
+        /// </summary>
+        public static ExchangeRate CreateFromImportFile([NotNull] string[] param)
+        {
+            //todo доделать
+            return new ExchangeRate
+            {
+                Value = "123",
+                CurrencyNumber = "840",
+                Date = DateTime.ParseExact(param[0], "dd.MM.yyyy", CultureInfo.InvariantCulture)
+            };
+        }
     }
 }
