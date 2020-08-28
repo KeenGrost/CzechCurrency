@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Common.Utility.Host;
+﻿using Common.Utility.Host;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Common.Utility.Extensions
 {
-
     public static class HostingEnvironmentExtensions
     {
         /// <summary>

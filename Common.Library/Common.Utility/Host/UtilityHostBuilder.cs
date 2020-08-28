@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using Common.Utility.Extensions;
-using JetBrains.Annotations;
+﻿using Common.Utility.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Hosting.Internal;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace Common.Utility.Host
 {
     /// <summary>
     /// Builder для IUtilityHost
     /// </summary>
-    public class UtilityHostBuilder: IUtilityHostBuilder
+    public class UtilityHostBuilder : IUtilityHostBuilder
     {
         private readonly IHostBuilder _builder;
 
@@ -28,6 +25,7 @@ namespace Common.Utility.Host
                 .Build();
 
             _builder.UseContentRoot(Directory.GetCurrentDirectory());
+
             _builder.ConfigureHostConfiguration(configurationBuilder =>
                 {
                     configurationBuilder.AddConfiguration(config);
@@ -39,6 +37,7 @@ namespace Common.Utility.Host
                 services.AddSingleton(utilityHostContext.HostingEnvironment);
             });
         }
+
 
         public void UseStartup(IServiceCollection services)
         {
@@ -59,6 +58,7 @@ namespace Common.Utility.Host
                 var utilityContext = GetUtilityHostBuilderContext(context);
                 configureServices(utilityContext, services);
             });
+
             return this;
         }
 
@@ -74,6 +74,7 @@ namespace Common.Utility.Host
                 var utilityContext = GetUtilityHostBuilderContext(context);
                 configureDelegate(utilityContext, builder);
             });
+
             return this;
         }
 
@@ -121,10 +122,9 @@ namespace Common.Utility.Host
                 return utilityHostBuilderContext;
             }
 
-            var utilityHostContext = (UtilityHostBuilderContext) contextVal;
+            var utilityHostContext = (UtilityHostBuilderContext)contextVal;
             utilityHostContext.Configuration = context.Configuration;
             return utilityHostContext;
         }
-
     }
 }

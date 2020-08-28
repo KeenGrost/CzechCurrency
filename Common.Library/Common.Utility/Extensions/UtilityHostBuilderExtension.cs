@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Common.Utility.Host;
+﻿using Common.Utility.Host;
 using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,7 +18,7 @@ namespace Common.Utility.Extensions
         {
             return hostBuilder.ConfigureServices(services =>
             {
-                services.AddSingleton<IUtilityStartup,TStartup>();
+                services.AddSingleton<IUtilityStartup, TStartup>();
                 hostBuilder.UseStartup(services);
             });
         }

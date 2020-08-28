@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 namespace Common.Utility.Host
@@ -19,6 +16,6 @@ namespace Common.Utility.Host
         /// <summary>
         /// Хранит конфигурацию приложения
         /// </summary>
-        public  IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; set; }
     }
 }
