@@ -258,6 +258,20 @@ namespace CzechCurrency.Data.Migrations.Migrations
                             Amount = 1,
                             Name = "Рэнд",
                             Number = "710"
+                        },
+                        new
+                        {
+                            Code = "CAD",
+                            Amount = 1,
+                            Name = "Канадский доллар",
+                            Number = "124"
+                        },
+                        new
+                        {
+                            Code = "INR",
+                            Amount = 100,
+                            Name = "Индийская рупия",
+                            Number = "356"
                         });
                 });
 
@@ -277,9 +291,9 @@ namespace CzechCurrency.Data.Migrations.Migrations
                         .HasColumnName("date")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Value")
+                    b.Property<decimal>("Value")
                         .HasColumnName("value")
-                        .HasColumnType("text");
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 

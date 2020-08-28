@@ -39,7 +39,7 @@ namespace CzechCurrency.Entities
         /// Значение курса
         /// </summary>
         [Column("value")]
-        public string Value { get; set; }
+        public decimal Value { get; set; }
 
         /// <summary>
         /// Создать курс обмена из файла импорта
@@ -48,7 +48,8 @@ namespace CzechCurrency.Entities
         {
             return new ExchangeRate
             {
-                Value = value,
+                Value = Decimal.Parse(value.Replace(',', '.'), NumberStyles.Float,
+                    CultureInfo.InvariantCulture),
                 CurrencyCode = currencyCode,
                 Date = DateTime.ParseExact(data, "dd.MM.yyyy", CultureInfo.InvariantCulture)
             };

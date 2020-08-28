@@ -30,7 +30,7 @@ namespace CzechCurrency.Data.Migrations.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     code = table.Column<string>(nullable: true),
                     date = table.Column<DateTime>(nullable: false),
-                    value = table.Column<string>(nullable: true)
+                    value = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,6 +49,8 @@ namespace CzechCurrency.Data.Migrations.Migrations
                 values: new object[,]
                 {
                     { "AUD", 1, "Австралийский доллар", "036" },
+                    { "ZAR", 1, "Рэнд", "710" },
+                    { "XDR", 1, "СДР (специальные права заимствования)", "960" },
                     { "USD", 1, "Доллар США", "840" },
                     { "TRY", 1, "Турецкая лира", "949" },
                     { "THB", 100, "Тайский Бат", "764" },
@@ -61,9 +63,9 @@ namespace CzechCurrency.Data.Migrations.Migrations
                     { "NZD", 1, "Новозеландский доллар", "554" },
                     { "NOK", 1, "Норвежская крона", "578" },
                     { "MYR", 1, "Малайзийский ринггит", "458" },
+                    { "CAD", 1, "Канадский доллар", "124" },
                     { "MXN", 1, "Мексиканское песо", "979" },
-                    { "XDR", 1, "СДР (специальные права заимствования)", "960" },
-                    { "KRW", 100, "Вона", "410" },
+                    { "JPY", 100, "Иена", "392" },
                     { "ISK", 100, "Исландская крона", "352" },
                     { "ILS", 1, "Новый израильский шекель", "376" },
                     { "IDR", 1000, "Рупия", "360" },
@@ -77,8 +79,8 @@ namespace CzechCurrency.Data.Migrations.Migrations
                     { "CHF", 1, "Швейцарский франк", "756" },
                     { "BRL", 1, "Бразильский реал", "840" },
                     { "BGN", 1, "Болгарский лев", "975" },
-                    { "JPY", 100, "Иена", "392" },
-                    { "ZAR", 1, "Рэнд", "710" }
+                    { "KRW", 100, "Вона", "410" },
+                    { "INR", 100, "Индийская рупия", "356" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -53,7 +53,10 @@ namespace CzechCurrency.Data
             var currencyItem28 = new Currency() { Number = "949", Code = "TRY", Name = "Турецкая лира", Amount = 1 };
             var currencyItem29 = new Currency() { Number = "840", Code = "USD", Name = "Доллар США", Amount = 1 };
             var currencyItem30 = new Currency() { Number = "960", Code = "XDR", Name = "СДР (специальные права заимствования)", Amount = 1 };
+
             var currencyItem31 = new Currency() { Number = "710", Code = "ZAR", Name = "Рэнд", Amount = 1 };
+            var currencyItem32 = new Currency() { Number = "124", Code = "CAD", Name = "Канадский доллар", Amount = 1 };
+            var currencyItem33 = new Currency() { Number = "356", Code = "INR", Name = "Индийская рупия", Amount = 100 };
             #endregion  Заполнение справочника валют
             modelBuilder.Entity<Currency>().HasData(new[] { 
                 currencyItem1,currencyItem2,currencyItem3,currencyItem4,currencyItem5,
@@ -64,7 +67,8 @@ namespace CzechCurrency.Data
 
                 currencyItem21,currencyItem22,currencyItem23,currencyItem24,currencyItem25,
                 currencyItem26,currencyItem27,currencyItem28,currencyItem29,currencyItem30,
-                currencyItem31
+                
+                currencyItem31,currencyItem32,currencyItem33
 
             });
             base.OnModelCreating(modelBuilder);

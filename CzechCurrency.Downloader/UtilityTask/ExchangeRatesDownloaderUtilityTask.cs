@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Common.Utility;
@@ -68,6 +69,7 @@ namespace CzechCurrency.Downloader.UtilityTask
                     if (currencies == null && exchangeRatesParams[0] == "Date")
                     {
                         currencies = exchangeRatesParams.Skip(1).ToArray();
+                        //todo проверка, что все валюты есть в справочнике. Иначе будет ошибка внешнего ключа.
                         
                         continue;
                     }
@@ -75,18 +77,18 @@ namespace CzechCurrency.Downloader.UtilityTask
                     if (currencies == null) break;
 
                     string data = exchangeRatesParams[0];
-                    for (int i = 0; i < exchangeRatesParams.Skip(1).ToArray().Length; i++)
+                    exchangeRatesParams = exchangeRatesParams.Skip(1).ToArray();
+                    for (int i = 0; i < exchangeRatesParams.Length; i++)
                     {
                         string currencyCode = currencies[i].Split(" ")[1];
                         exchangeRates.Add(ExchangeRate.CreateFromImportFile(exchangeRatesParams[i], currencyCode, data));
                     }
-
+                    
 
                    
                 }
             }
-
-            
+           
 
             // Добавить в БД
             await _exchangeRateService.AddRange(exchangeRates);
