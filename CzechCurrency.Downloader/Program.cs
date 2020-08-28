@@ -1,12 +1,23 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Common.Utility.Extensions;
+using Microsoft.Extensions.Hosting;
 
 namespace CzechCurrency.Downloader
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            await CreateHostBuilder(args).Build().RunUtility();
         }
+
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureUtilityHostDefaults(utilityHostBuilder =>
+                {
+                    utilityHostBuilder.UseStartup<Startup>();
+
+                });
     }
 }

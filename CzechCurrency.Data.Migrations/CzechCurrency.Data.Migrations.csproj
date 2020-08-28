@@ -5,7 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Compile Remove="Migrations\20200828144023_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200828144023_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200828144402_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200828144402_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CzechCurrency.Data\CzechCurrency.Data.csproj" />
+    <ProjectReference Include="..\CzechCurrency.Entities\CzechCurrency.Entities.csproj" />
   </ItemGroup>
 
 </Project>
