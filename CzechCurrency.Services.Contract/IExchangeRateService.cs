@@ -15,18 +15,17 @@ namespace CzechCurrency.Services.Contract
         /// <summary>
         /// Получить курс обмена по дате и по коду валюты
         /// </summary>
-        /// <param name="numberCurrency">Код</param>
+        /// <param name="currencyCode">Код</param>
         /// <param name="date">Дата</param>
         /// <returns></returns>
-        [ItemNotNull]
-        Task<ExchangeRate> Get([NotNull] string numberCurrency, DateTime date);
+        [CanBeNull]
+        Task<ExchangeRate> Get([NotNull] string currencyCode, DateTime date);
 
         /// <summary>
         /// Пакетное сохранение курсов обмена в БД
         /// </summary>
         /// <param name="exchangeRates">Набор курсов</param>
         /// <returns></returns>
-        [ItemNotNull]
         Task AddRange(IEnumerable<ExchangeRate> exchangeRates);
 
         /// <summary>
@@ -34,7 +33,6 @@ namespace CzechCurrency.Services.Contract
         /// </summary>
         /// <param name="year">год</param>
         /// <returns></returns>
-        [ItemNotNull]
         Task DeleteByYear(int year);
 
     }

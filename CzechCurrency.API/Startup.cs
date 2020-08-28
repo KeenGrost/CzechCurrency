@@ -19,10 +19,6 @@ namespace CzechCurrency.API
     {
         private const string ConfigurationConnectionStringCzechCurrency = "DbConfig:DbConnectionStrings:CzechCurrency";
 
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
 
         public IConfiguration Configuration { get; }
 
@@ -106,6 +102,9 @@ namespace CzechCurrency.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+
 
             app.UseEndpoints(endpoints =>
             {
