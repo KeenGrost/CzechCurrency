@@ -55,7 +55,17 @@ namespace CzechCurrency.Data
             var currencyItem30 = new Currency() { Number = "960", Code = "XDR", Name = "СДР (специальные права заимствования)", Amount = 1 };
             var currencyItem31 = new Currency() { Number = "710", Code = "ZAR", Name = "Рэнд", Amount = 1 };
             #endregion  Заполнение справочника валют
-            modelBuilder.Entity<Currency>().HasData(new[] { currencyItem1,currencyItem2,currencyItem3,currencyItem4
+            modelBuilder.Entity<Currency>().HasData(new[] { 
+                currencyItem1,currencyItem2,currencyItem3,currencyItem4,currencyItem5,
+                currencyItem6,currencyItem7,currencyItem8,currencyItem9,currencyItem10,
+
+                currencyItem11,currencyItem12,currencyItem13,currencyItem14,currencyItem15,
+                currencyItem16,currencyItem17,currencyItem18,currencyItem19,currencyItem20,
+
+                currencyItem21,currencyItem22,currencyItem23,currencyItem24,currencyItem25,
+                currencyItem26,currencyItem27,currencyItem28,currencyItem29,currencyItem30,
+                currencyItem31
+
             });
             base.OnModelCreating(modelBuilder);
         }
