@@ -23,8 +23,9 @@ namespace CzechCurrency.Services
 
         public async Task<ExchangeRate> Get(string currencyCode, DateTime date)
         {
+            DateTime minimalDate = new DateTime(1990,12,31);
             ExchangeRate exchangeRate = null;
-            while (exchangeRate == null)
+            while (exchangeRate == null && date > minimalDate)
             {
                 exchangeRate = await _repository.Get(currencyCode, date);
                 // смещение с учетом

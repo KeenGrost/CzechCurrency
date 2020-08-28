@@ -341,16 +341,15 @@
   <p>Выберите дату и валюту</p>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" (dateChange)="loadExchangeRate($event)">
-      <mat-datepicker #picker></mat-datepicker>
+      <input matInput [matDatepicker]="picker" (dateChange)="changeDatePicker($event)">
+      <mat-datepicker  #picker></mat-datepicker>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     </mat-form-field>
 
-    <select>
-      <option *ngFor="let currency of currencies" value="currency.code">{{currency.name}} ({{currency.amount}})</option>
+    <select (change)="changeSelectCurrency($event)">
+      <option *ngFor="let currency of currencies" value="{{currency.code}}">{{currency.name}} ({{currency.amount}})</option>
     </select>
-<div>
-</div>
+    <h2> Курс обмена на {{exchangeRate.date| date:'dd-MM-yyyy'}} составляет {{exchangeRate.value}} чешских крон</h2>
 
     <!-- Footer -->
     <footer>
