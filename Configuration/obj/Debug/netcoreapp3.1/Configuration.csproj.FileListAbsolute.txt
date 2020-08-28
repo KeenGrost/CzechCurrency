@@ -1,9 +1,0 @@
-F:\GIT\CzechCurrency\Configuration\bin\Debug\netcoreapp3.1\Configuration.deps.json
-F:\GIT\CzechCurrency\Configuration\bin\Debug\netcoreapp3.1\Configuration.dll
-F:\GIT\CzechCurrency\Configuration\bin\Debug\netcoreapp3.1\Configuration.pdb
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.csprojAssemblyReference.cache
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.AssemblyInfoInputs.cache
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.AssemblyInfo.cs
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.csproj.CoreCompileInputs.cache
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.dll
-F:\GIT\CzechCurrency\Configuration\obj\Debug\netcoreapp3.1\Configuration.pdb

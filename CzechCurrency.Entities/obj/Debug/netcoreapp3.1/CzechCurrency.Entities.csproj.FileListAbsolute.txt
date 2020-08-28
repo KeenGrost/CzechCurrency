@@ -1,9 +1,0 @@
-F:\GIT\CzechCurrency\CzechCurrency.Entities\bin\Debug\netcoreapp3.1\CzechCurrency.Entities.deps.json
-F:\GIT\CzechCurrency\CzechCurrency.Entities\bin\Debug\netcoreapp3.1\CzechCurrency.Entities.dll
-F:\GIT\CzechCurrency\CzechCurrency.Entities\bin\Debug\netcoreapp3.1\CzechCurrency.Entities.pdb
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.csprojAssemblyReference.cache
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.AssemblyInfoInputs.cache
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.AssemblyInfo.cs
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.csproj.CoreCompileInputs.cache
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.dll
-F:\GIT\CzechCurrency\CzechCurrency.Entities\obj\Debug\netcoreapp3.1\CzechCurrency.Entities.pdb
