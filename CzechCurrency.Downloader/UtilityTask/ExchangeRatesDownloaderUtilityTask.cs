@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Common.Utility;
 using CzechCurrency.Downloader.Options;
 using CzechCurrency.Services.Contract;
@@ -44,6 +45,9 @@ namespace CzechCurrency.Downloader.UtilityTask
         {
             var exchangeRates = new List<ExchangeRate>();
 
+            //Шапка файла
+            string[] currencies = null;
+
             // Скачать файл
             //
             var exchangeRatesSource = await _cnbApi.ExchangeRates(_czechCurrencyDownloaderOptions.Year);
@@ -53,16 +57,36 @@ namespace CzechCurrency.Downloader.UtilityTask
             //
             using (var streamReader = new StreamReader(contentStream))
             {
-                streamReader.ReadLine();
                 while (!streamReader.EndOfStream)
                 {
+
                     var line = streamReader.ReadLine();
                     if (line == null) continue;
 
                     var exchangeRatesParams = line.Trim().Split("|");
-                    exchangeRates.Add(ExchangeRate.CreateFromImportFile(exchangeRatesParams));
+                    
+                    if (currencies == null && exchangeRatesParams[0] == "Date")
+                    {
+                        currencies = exchangeRatesParams.Skip(1).ToArray();
+                        
+                        continue;
+                    }
+
+                    if (currencies == null) break;
+
+                    string data = exchangeRatesParams[0];
+                    for (int i = 0; i < exchangeRatesParams.Skip(1).ToArray().Length; i++)
+                    {
+                        string currencyCode = currencies[i].Split(" ")[1];
+                        exchangeRates.Add(ExchangeRate.CreateFromImportFile(exchangeRatesParams[i], currencyCode, data));
+                    }
+
+
+                   
                 }
             }
+
+            
 
             // Добавить в БД
             await _exchangeRateService.AddRange(exchangeRates);
