@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest() {
-    return this.httpClient.get(this.REST_API_SERVER);
+  public sendGetRequest(url) {
+    return this.httpClient.get(this.REST_API_SERVER+url);
   }
 }
