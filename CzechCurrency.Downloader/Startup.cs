@@ -54,16 +54,28 @@ namespace CzechCurrency.Downloader
         /// <param name="service"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-
+            RegisterLogging(services);
             RegisterServices(services);
             RegisterRepositories(services);
             RegisterBackgroundTasks(services);
             RegisterOptions(services);
 
             // Конфигурация БД контекста
-            string configurationConnectionString = Configuration["DbConfig:DbConnectionString:CzechCurrency"];
+            string configurationConnectionString = Configuration["DbConfig:DbConnectionStrings:CzechCurrency"];
 
             services.AddDbContext<CzechCurrencyDbContext>(options => options.UseNpgsql(configurationConnectionString));
+        }
+
+        /// <summary>
+        /// Регистрация сервиса для логирования
+        /// </summary>
+        /// <param name="services"></param>
+        private void RegisterLogging(IServiceCollection services)
+        {
+            // Serilog for DI
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder.AddSerilog(dispose:true));
+
         }
 
         private void RegisterServices(IServiceCollection services)

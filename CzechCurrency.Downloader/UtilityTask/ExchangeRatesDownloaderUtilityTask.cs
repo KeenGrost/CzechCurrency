@@ -1,32 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Common.Utility;
+﻿using Common.Utility;
 using CzechCurrency.Downloader.Options;
 using CzechCurrency.Services.Contract;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
 
 namespace CzechCurrency.Downloader.UtilityTask
 {
     /// <summary>
     /// Загрузчик курсов валют
     /// </summary>
-    public class ExchangeRatesDownloaderUtilityTask: IUtilityTask
+    public class ExchangeRatesDownloaderUtilityTask : IUtilityTask
     {
         private readonly IExchangeRateService _exchangeRateService;
         private readonly ILogger<CzechCurrencyDownloaderOptions> _logger;
         private readonly CzechCurrencyDownloaderOptions _czechCurrencyDownloaderOptions;
+
+
         public ExchangeRatesDownloaderUtilityTask(
-            IExchangeRateService exchangeRateService, 
-            ILogger<CzechCurrencyDownloaderOptions> logger, 
-            CzechCurrencyDownloaderOptions czechCurrencyDownloaderOptions)
+            IExchangeRateService exchangeRateService,
+            ILogger<CzechCurrencyDownloaderOptions> logger,
+            IOptionsMonitor<CzechCurrencyDownloaderOptions> czechCurrencyDownloaderOptions)
         {
             _exchangeRateService = exchangeRateService;
             _logger = logger;
-            _czechCurrencyDownloaderOptions = czechCurrencyDownloaderOptions;
+            _czechCurrencyDownloaderOptions = czechCurrencyDownloaderOptions.CurrentValue;
         }
-
 
         public async Task Execute()
         {
@@ -35,7 +34,6 @@ namespace CzechCurrency.Downloader.UtilityTask
 
         private async Task DownloadExchageRates()
         {
-
             //todo Скачать файл
             _logger.LogInformation("Файл Скачан");
 
