@@ -81,10 +81,7 @@ namespace CzechCurrency.Data.Migrations.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("CurrencyCode")
-                        .HasColumnType("text");
-
-                    b.Property<string>("CurrencyNumber")
-                        .HasColumnName("currency_number")
+                        .HasColumnName("code")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Date")
@@ -98,8 +95,6 @@ namespace CzechCurrency.Data.Migrations.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CurrencyCode");
-
-                    b.HasIndex("CurrencyNumber");
 
                     b.ToTable("exchange_rates");
                 });

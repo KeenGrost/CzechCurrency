@@ -23,8 +23,8 @@ namespace CzechCurrency.Entities
         /// <summary>
         /// Код валюты
         /// </summary>
-        [Column("currency_number")]
-        public string CurrencyNumber { get; set; }
+        [Column("code")]
+        public string CurrencyCode { get; set; }
 
         public Currency Currency { get; set; }
 
@@ -49,7 +49,7 @@ namespace CzechCurrency.Entities
             return new ExchangeRate
             {
                 Value = value,
-                CurrencyNumber = currencyCode,
+                CurrencyCode = currencyCode,
                 Date = DateTime.ParseExact(data, "dd.MM.yyyy", CultureInfo.InvariantCulture)
             };
         }

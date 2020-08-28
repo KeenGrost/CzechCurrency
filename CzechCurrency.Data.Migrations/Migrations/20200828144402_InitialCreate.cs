@@ -28,8 +28,7 @@ namespace CzechCurrency.Data.Migrations.Migrations
                 {
                     id = table.Column<long>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    currency_number = table.Column<string>(nullable: true),
-                    CurrencyCode = table.Column<string>(nullable: true),
+                    code = table.Column<string>(nullable: true),
                     date = table.Column<DateTime>(nullable: false),
                     value = table.Column<string>(nullable: true)
                 },
@@ -37,8 +36,8 @@ namespace CzechCurrency.Data.Migrations.Migrations
                 {
                     table.PrimaryKey("PK_exchange_rates", x => x.id);
                     table.ForeignKey(
-                        name: "FK_exchange_rates_currencies_CurrencyCode",
-                        column: x => x.CurrencyCode,
+                        name: "FK_exchange_rates_currencies_code",
+                        column: x => x.code,
                         principalTable: "currencies",
                         principalColumn: "code",
                         onDelete: ReferentialAction.Restrict);
@@ -56,14 +55,9 @@ namespace CzechCurrency.Data.Migrations.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_exchange_rates_CurrencyCode",
+                name: "IX_exchange_rates_code",
                 table: "exchange_rates",
-                column: "CurrencyCode");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_exchange_rates_currency_number",
-                table: "exchange_rates",
-                column: "currency_number");
+                column: "code");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

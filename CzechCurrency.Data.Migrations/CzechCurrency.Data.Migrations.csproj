@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200828144023_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200828144023_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,6 +20,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CzechCurrency.Data\CzechCurrency.Data.csproj" />
     <ProjectReference Include="..\CzechCurrency.Entities\CzechCurrency.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

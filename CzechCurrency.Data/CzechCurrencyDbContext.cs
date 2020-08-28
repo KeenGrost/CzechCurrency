@@ -14,7 +14,7 @@ namespace CzechCurrency.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ExchangeRate>().HasIndex(a => a.CurrencyNumber);
+            modelBuilder.Entity<ExchangeRate>().HasIndex(a => a.CurrencyCode);
 
             // Заполнение справочника валют
 
