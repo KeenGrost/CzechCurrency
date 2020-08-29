@@ -16,7 +16,7 @@ namespace CzechCurrency.Data.Contract
         /// Получить валюту по коду
         /// </summary>
         /// <param name="code">Код</param>
-        /// <returns>История активаций пакетов</returns>
+        /// <returns>Валюта</returns>
         [ItemNotNull]
         Task<Currency> GetByCode([NotNull]string code);
 
@@ -24,7 +24,7 @@ namespace CzechCurrency.Data.Contract
         /// Получить валюту по номеру
         /// </summary>
         /// <param name="number">Номер</param>
-        /// <returns>История активаций пакетов</returns>
+        /// <returns>Валюта</returns>
         [ItemNotNull]
         Task<Currency> GetByNumber([NotNull] string number);
 
