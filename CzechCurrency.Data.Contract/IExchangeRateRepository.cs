@@ -16,7 +16,7 @@ namespace CzechCurrency.Data.Contract
         /// </summary>
         /// <param name="currencyCode">Код</param>
         /// <param name="date"></param>
-        /// <returns>История активаций пакетов</returns>
+        /// <returns>Курс обмена</returns>
         [CanBeNull]
         Task<ExchangeRate> Get([NotNull] string currencyCode, DateTime date);
 

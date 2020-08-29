@@ -10,7 +10,7 @@ namespace CzechCurrency.Data.Repositories
 { 
 
     /// <summary>
-    /// Репозиторий логов активированных пакетов
+    /// Репозиторий Справочника валют
     /// </summary>
     public class CurrencyRepository : BaseRepository<Currency>, ICurrencyRepository
     {
