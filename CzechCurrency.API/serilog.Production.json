@@ -6,7 +6,7 @@
       {
         "Name": "RollingFile",
         "Args": {
-          "pathFormat": "/var/www/logs/webapi.czech-currency.ru/CzechCurrency.API-prod-{Date}.log",
+          "pathFormat": "Logs/CzechCurrency.API-dev-{Date}.log",
           "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff z} [{Level:u3}] {IPAddress} [{RequestId}] [{IdentityName}] {SourceContext}: {Message:lj}{NewLine}{Exception}"
         }
       },

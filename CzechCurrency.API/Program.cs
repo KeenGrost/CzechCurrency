@@ -26,7 +26,8 @@ namespace CzechCurrency.API
                 {
                     webBuilder.UseStartup<Startup>()
                         .UseSerilog()
-                        .UseKestrel()
+                        //.UseKestrel()
+                        .UseIISIntegration()
                         .UseContentRoot(Directory.GetCurrentDirectory());
                 });
     }

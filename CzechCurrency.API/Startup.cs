@@ -1,4 +1,5 @@
-﻿using Configuration;
+﻿using System;
+using Configuration;
 using CzechCurrency.Data;
 using CzechCurrency.Data.Contract;
 using CzechCurrency.Data.Repositories;
