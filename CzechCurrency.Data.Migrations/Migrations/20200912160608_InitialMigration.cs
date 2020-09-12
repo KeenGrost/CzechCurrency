@@ -1,10 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CzechCurrency.Data.Migrations.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +26,7 @@ namespace CzechCurrency.Data.Migrations.Migrations
                 columns: table => new
                 {
                     id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     code = table.Column<string>(nullable: true),
                     date = table.Column<DateTime>(nullable: false),
                     value = table.Column<decimal>(nullable: false)

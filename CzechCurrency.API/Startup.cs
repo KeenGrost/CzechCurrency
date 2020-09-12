@@ -61,12 +61,12 @@ namespace CzechCurrency.API
             string conString = Configuration[ConfigurationConnectionStringCzechCurrency];
 
             services.AddDbContext<CzechCurrencyDbContext>(options =>
-                options.UseNpgsql(conString, b =>
+                options.UseSqlServer(conString, b =>
                 {
                     b.MigrationsAssembly("CzechCurrency.Data.Migrations");
                 }));
 
-            services.AddDbContext<CzechCurrencyDbContext>(options => options.UseNpgsql(conString));
+            services.AddDbContext<CzechCurrencyDbContext>(options => options.UseSqlServer(conString));
 
             RegisterServices(services);
 
