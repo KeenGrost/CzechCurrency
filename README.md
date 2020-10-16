@@ -15,11 +15,15 @@
 * Репозиторий ведется по GitFlow
 * Используются 3 конфига для развертывания в средах Development, Staging, Production
 * Подключено логирование Serilog
+* Подключен Swagger
+* Добавлен пример реализации кэша Redis
 
 ## База данных
 
 * PostgreSQL 12.4
 * Entity Framework Core Code First
+* Используются индексы
+* Используются внешние ключи
 
 ## CzechCurrency.Downloader
 Чешский национальный банк выкладывает курсы по адресу https://www.cnb.cz/en/financial_markets/foreign_exchange_market/exchange_rate_fixing/year.txt?year=2018.
@@ -51,7 +55,5 @@
 ## Что можно доделать
 
 * Запросы в API по токену
-* Swagger
-* Redis кэш
 * Хелс чеки
-* PaginationQuery
+* Потокобезопасность на случай одновременного запуска
