@@ -19,6 +19,7 @@ namespace CzechCurrency.API
     {
         private const string ConfigurationConnectionStringCzechCurrency = "DbConfig:DbConnectionStrings:CzechCurrency";
 
+        private const string ConfigurationConnectionStringRedis = "Redis:ConnectionString";
 
         public IConfiguration Configuration { get; }
 
@@ -75,6 +76,8 @@ namespace CzechCurrency.API
             services.AddControllers();
 
             services.AddSwaggerDocument(settings => { settings.Title = "CzechCurrency API"; });
+
+            RegisterDistributedCache(services);
         }
 
         private void RegisterServices(IServiceCollection services)
@@ -87,6 +90,22 @@ namespace CzechCurrency.API
         {
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
             services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+        }
+
+        private void RegisterDistributedCache(IServiceCollection services)
+        {
+            if (Environment.IsDevelopment())
+            {
+                services.AddDistributedMemoryCache();
+            }
+            else
+            {
+                services.AddStackExchangeRedisCache(option =>
+                {
+                    option.Configuration = Configuration[ConfigurationConnectionStringRedis];
+                    option.InstanceName = "czech:";
+                });
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

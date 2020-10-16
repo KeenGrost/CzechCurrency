@@ -18,12 +18,20 @@ using Refit;
 using Serilog;
 using System;
 using System.Net.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CzechCurrency.Downloader
 {
     public class Startup : IUtilityStartup
     {
+        private const string ConfigurationConnectionStringRedis = "Redis:ConnectionString";
+
         private IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// Environment
+        /// </summary>
+        public IHostEnvironment Environment { get; }
 
         /// <summary>
         /// ctor
@@ -38,6 +46,8 @@ namespace CzechCurrency.Downloader
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
+
+            Environment = env;
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
@@ -56,6 +66,7 @@ namespace CzechCurrency.Downloader
             RegisterRepositories(services);
             RegisterBackgroundTasks(services);
             RegisterOptions(services);
+            RegisterDistributedCache(services);
 
             // Конфигурация БД контекста
             string configurationConnectionString = Configuration["DbConfig:DbConnectionStrings:CzechCurrency"];
@@ -123,6 +134,22 @@ namespace CzechCurrency.Downloader
             else
             {
                 throw new InvalidOperationException($"Не найдена опция {nameof(UtilityOptions)}");
+            }
+        }
+
+        private void RegisterDistributedCache(IServiceCollection services)
+        {
+            if (Environment.IsDevelopment())
+            {
+                services.AddDistributedMemoryCache();
+            }
+            else
+            {
+                services.AddStackExchangeRedisCache(option =>
+                {
+                    option.Configuration = Configuration[ConfigurationConnectionStringRedis];
+                    option.InstanceName = "czech:";
+                });
             }
         }
 
