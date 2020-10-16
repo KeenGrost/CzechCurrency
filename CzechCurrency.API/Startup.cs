@@ -72,9 +72,9 @@ namespace CzechCurrency.API
 
             RegisterRepositories(services);
 
-            // RegisterSwagger(services);
-
             services.AddControllers();
+
+            services.AddSwaggerDocument(settings => { settings.Title = "CzechCurrency API"; });
         }
 
         private void RegisterServices(IServiceCollection services)
@@ -105,6 +105,9 @@ namespace CzechCurrency.API
 
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
+            app.UseOpenApi();
+
+            app.UseSwaggerUi3();
 
             app.UseEndpoints(endpoints =>
             {

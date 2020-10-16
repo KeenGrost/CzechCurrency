@@ -53,7 +53,6 @@
 ## Что можно доделать
 
 * Запросы в API по токену
-* Swagger
 * Redis кэш
 * Хелс чеки
 * PaginationQuery
