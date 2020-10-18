@@ -31,7 +31,6 @@ namespace CzechCurrency.API.Controllers
         [HttpGet("Get")]
         public async Task<ActionResult<ExchangeRate>> Get([FromQuery]ExchangeRateRequest exchangeRateRequest)
         {
-            _logger.LogInformation("курсы обмена");
 
             var result = await  _exchangeRateService.Get(exchangeRateRequest.CurrencyCode, exchangeRateRequest.Date);
             if (result == null)
