@@ -20,10 +20,10 @@ namespace CzechCurrency.API.Controllers
     {
         private readonly ICurrencyService _currencyService;
 
-        private readonly ILogger<ExchangeRateController> _logger;
+        private readonly ILogger<CurrencyController> _logger;
 
         public CurrencyController(
-            ILogger<ExchangeRateController> logger,
+            ILogger<CurrencyController> logger,
             ICurrencyService currencyService)
         {
             _logger = logger;
