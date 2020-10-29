@@ -70,8 +70,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Test.Base", "Common.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CzechCurrency.Events", "CzechCurrency.Events\CzechCurrency.Events.csproj", "{BCA647D4-8C93-44E3-B8BD-61ED767D8D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechCurrency.Report.API", "CzechCurrency.Report.API\CzechCurrency.Report.API.csproj", "{A6C10125-21C8-471A-A2A7-F0834FA7234E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,10 +144,6 @@ Global
 		{BCA647D4-8C93-44E3-B8BD-61ED767D8D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCA647D4-8C93-44E3-B8BD-61ED767D8D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCA647D4-8C93-44E3-B8BD-61ED767D8D1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6C10125-21C8-471A-A2A7-F0834FA7234E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6C10125-21C8-471A-A2A7-F0834FA7234E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6C10125-21C8-471A-A2A7-F0834FA7234E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6C10125-21C8-471A-A2A7-F0834FA7234E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,7 +166,6 @@ Global
 		{C4110F74-067C-4590-8EAC-44F67BEFC3EE} = {FD50C5DF-1C4C-4209-9449-F571044E7DF3}
 		{C447815C-5466-43EF-9098-1EBE159F1B6E} = {79902491-D762-4348-A36C-FBDE9670F587}
 		{BCA647D4-8C93-44E3-B8BD-61ED767D8D1C} = {95EB28A0-0569-430D-9F98-C586D52B7B83}
-		{A6C10125-21C8-471A-A2A7-F0834FA7234E} = {6A3947D0-8627-4EBE-8E17-DDE98393F24F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EDDC187D-D2DB-42EB-8767-3010362359FF}

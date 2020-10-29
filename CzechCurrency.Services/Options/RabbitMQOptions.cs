@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CzechCurrency.Services.Options
+﻿namespace CzechCurrency.Services.Options
 {
     /// <summary>
     /// Конфигурация RabbitMQ
