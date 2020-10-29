@@ -16,7 +16,8 @@
 * Используются 3 конфига для развертывания в средах Development, Staging, Production
 * Подключено логирование Serilog
 * Подключен Swagger
-* Добавлен пример реализации кэша Redis
+* Подключен Redis
+* Подключен RabbitMQ через MassTransit
 
 ## База данных
 
