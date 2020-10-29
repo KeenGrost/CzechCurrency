@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CzechCurrency.API.Requests;
 using CzechCurrency.Entities;
 using CzechCurrency.Services.Contract;
+using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -37,5 +39,7 @@ namespace CzechCurrency.API.Controllers
             var result = await _currencyService.GetAll();
             return Ok(result);
         }
+
+        
     }
 }

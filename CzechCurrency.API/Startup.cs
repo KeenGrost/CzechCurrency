@@ -1,4 +1,5 @@
-﻿using Configuration;
+﻿using System;
+using Configuration;
 using CzechCurrency.Data;
 using CzechCurrency.Data.Contract;
 using CzechCurrency.Data.Repositories;
@@ -12,6 +13,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System.Globalization;
+using CzechCurrency.Services.Consumers;
+using CzechCurrency.Services.Options;
+using GreenPipes;
+using MassTransit;
 
 namespace CzechCurrency.API
 {
@@ -78,6 +83,8 @@ namespace CzechCurrency.API
             services.AddSwaggerDocument(settings => { settings.Title = "CzechCurrency API"; });
 
             RegisterDistributedCache(services);
+
+            RegisterRabbitMq(services);
         }
 
         private void RegisterServices(IServiceCollection services)
@@ -90,6 +97,69 @@ namespace CzechCurrency.API
         {
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
             services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+        }
+
+        /// <summary>
+        /// Регистрируем брокер сообщений
+        /// </summary>
+        /// <param name="services"></param>
+        private void RegisterRabbitMq(IServiceCollection services)
+        {
+            var rabbitOptions = new RabbitMqOptions();
+            Configuration.GetSection("RabbitMqOptions").Bind(rabbitOptions);
+
+            services.AddMassTransit(configurator =>
+            {
+                // MassTransit нативно поддерживает наш DI.
+                configurator.AddConsumer<ExchangeRateReportConsumer>();
+
+                configurator.AddBus(context => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    cfg.UseHealthCheck(context);
+
+                    cfg.Host(new Uri(rabbitOptions.Url), hostConfigurator =>
+                    {
+                        hostConfigurator.Username(rabbitOptions.Login);
+                        hostConfigurator.Password(rabbitOptions.Password);
+                    });
+
+                    // Используем встроенный планировщик в RabbitMQ
+                    cfg.UseDelayedExchangeMessageScheduler();
+
+                    // Регистрация очереди из которой будем получать сообщения
+                    cfg.ReceiveEndpoint("CzechCurrencyApiQueue", ep =>
+                    {
+                        // При неудачно завершении задачи (а так же после отработки политики повторов,
+                        // так же не удачных если они включены) задача будет выпущена с задержкой
+                        ep.UseScheduledRedelivery(ret =>
+                        {
+                            // Можно ловить определенные исключения
+                            //ret.Handle<TimeoutException>();
+
+                            // Можно игнорировать некоторые исключения, перепоставки не будет, а сразу в Fault очередь
+                            ret.Ignore(typeof(ArgumentException));
+
+                            ret.Intervals(TimeSpan.FromMinutes(5), TimeSpan.FromMinutes(15), TimeSpan.FromMinutes(30));
+                        });
+
+                        // Политика повторов пытается выполнить одну и ту же задачу несколько раз не снимая с неё блокировки.
+                        // Политику повтора можно использовать с политикой повторной доставки совместно.
+                        // Большой таймаут ставить - плохое решение.
+                        //ep.UseMessageRetry(r =>
+                        //{
+                        //    r.Interval(2, TimeSpan.FromSeconds(10));
+                        //});
+
+                        // Объявляем потребителя события для формирования отчета
+                        ep.ConfigureConsumer<ExchangeRateReportConsumer>(context);
+
+                        // Можно регистрировать несколько потребителей
+                        // ep.ConfigureConsumer<AnotherConsumer>(provider);
+                    });
+                }));
+            });
+
+            services.AddMassTransitHostedService();
         }
 
         private void RegisterDistributedCache(IServiceCollection services)

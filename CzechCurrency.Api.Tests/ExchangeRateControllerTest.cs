@@ -7,6 +7,7 @@ using CzechCurrency.API.Controllers;
 using CzechCurrency.API.Requests;
 using CzechCurrency.Api.Tests.Fixtures;
 using CzechCurrency.Entities;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -28,13 +29,21 @@ namespace CzechCurrency.Api.Tests
             return service;
         }
 
+        private IBusControl MakeFakeBusControl()
+        {
+            var service = Substitute.For<IBusControl>();
+            return service;
+        }
 
         [Test]
         public async Task Get_ByDefault_ReturnsSuccess()
         {
             // Arrange
-            var controller = new ExchangeRateController(MakeFakeLogger(),
-                MakeFakeExchangeRateService());
+            var controller = new ExchangeRateController(
+                MakeFakeLogger(),
+                MakeFakeExchangeRateService(),
+                MakeFakeBusControl()
+                );
 
             ExchangeRateRequest activateActionRequest = new ExchangeRateRequestFixture().Create();
 
